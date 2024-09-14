@@ -6,8 +6,8 @@ st.write("""
 Hello *world!*
 """)
  
-df = pd.read_csv("my_data.csv")
-st.line_chart(df)
+df = pd.read_csv("Flex_24.csv")
+st.dataframe(df)
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
