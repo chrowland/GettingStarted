@@ -8,10 +8,16 @@ st.set_page_config(
 )
 st.title("PA RAPTOR")
 st.write("""
-# My first app
-Let's Go!
+# Validation Studio
 """)
- 
+
+st.info(
+    """
+    Use the table below to add, remove, and edit items.
+    And don't forget to commit your changes when you're done.
+    """
+)
+
 df = pd.read_csv("Flex_24.csv")
 df.set_index('metric', inplace=True)
 st.dataframe(df)
