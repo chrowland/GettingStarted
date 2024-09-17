@@ -18,11 +18,11 @@ st.info(
     """
 )
 
-df = pd.read_csv("Flex_24.csv")
+df = pd.read_csv("PARA_ex_inputs.csv")
 df.set_index('metric', inplace=True)
 st.dataframe(df)
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
-st.title("Monthly Leads")
+st.title("Monthly Connections")
 st.line_chart(df.iloc[0,:])
