@@ -29,6 +29,7 @@ st.info(
     """
 )
 #Calculate the output table
+dfT=df.T
 output=pd.DataFrame()
 output['Flex Connections']=dfT['PA Connections']*dfT['Flex SOV']
 output['Flex Transactions']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ Seasonality & Mix']
