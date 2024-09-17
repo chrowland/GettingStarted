@@ -22,9 +22,20 @@ df = pd.read_csv("PARA_ex_inputs.csv")
 df.set_index('Input Metric', inplace=True)
 st.dataframe(df)
 
+st.info(
+    """
+    Outputs table. Displays calculations from the last PA Raptor run using inputs table above. Validate.
+    To change outputs, revise inputs in table above and commit changes. Changes to inputs will affect outputs.
+    """
+)
 #Calculate the output table
-outputs=pd.DataFrame()
-outputs
+output=pd.DataFrame()
+output['Flex Connections']=dfT['PA Connections']*dfT['Flex SOV']
+output['Flex Transactions']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ Seasonality & Mix']
+output['Gross Revenue']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ Seasonality & Mix']*dfT['Referral Fee']
+output['Accrual']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ Seasonality & Mix']*dfT['Referral Fee']*(1-dfT['Collection'])
+output=output.T
+st.dataframe(output)
 
 st.title("Monthly Connections")
 st.line_chart(df.iloc[0,:])
