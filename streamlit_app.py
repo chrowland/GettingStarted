@@ -37,6 +37,7 @@ output['Gross Revenue']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversio
 output['Accrual']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ Seasonality & Mix']*dfT['Referral Fee']*(1-dfT['Collection'])
 output=output.T
 st.dataframe(output)
+st.button("Push Scenario to Hive")
 
 st.title("Monthly Connections")
 st.line_chart(df.iloc[0,:])
