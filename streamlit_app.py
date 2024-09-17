@@ -13,7 +13,7 @@ st.write("""
 
 st.info(
     """
-    Use the table below to add, remove, and edit items.
+    Inputs table. Displays inputs to last PA Raptor run. Validate and overwrite to see impacts of revision.
     And don't forget to commit your changes when you're done.
     """
 )
@@ -21,8 +21,10 @@ st.info(
 df = pd.read_csv("PARA_ex_inputs.csv")
 df.set_index('Input Metric', inplace=True)
 st.dataframe(df)
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+
+#Calculate the output table
+outputs=pd.DataFrame()
+outputs
+
 st.title("Monthly Connections")
 st.line_chart(df.iloc[0,:])
