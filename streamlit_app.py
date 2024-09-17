@@ -21,7 +21,7 @@ st.info(
 df = pd.read_csv("PARA_ex_inputs.csv")
 df.set_index('Input Metric', inplace=True)
 st.dataframe(df)
-
+st.button("Commit Changes")
 st.info(
     """
     Outputs table. Displays calculations from the last PA Raptor run using inputs table above. Validate.
