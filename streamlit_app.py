@@ -41,3 +41,5 @@ st.button("Push Scenario to Hive")
 
 st.title("Monthly Connections")
 st.line_chart(df.iloc[0,:])
+
+st.table(df)
