@@ -20,7 +20,7 @@ st.info(
 
 df = pd.read_csv("PARA_ex_inputs.csv")
 df.set_index('Input Metric', inplace=True)
-st.dataframe(df)
+st.table(df)
 st.button("Commit Changes")
 st.info(
     """
@@ -42,4 +42,3 @@ st.button("Push Scenario to Hive")
 st.title("Monthly Connections")
 st.line_chart(df.iloc[0,:])
 
-st.table(df)
