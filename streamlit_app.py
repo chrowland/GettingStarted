@@ -36,7 +36,15 @@ st.info(
     To change outputs, revise inputs in table above and commit changes. Changes to inputs will affect outputs.
     """
 )
-#Calculate the output table
+#Calculate Baseline
+df_inputsT=df_inputs.T
+Baselines=pd.DataFrame()
+Baselines['Flex Connections']=df_inputsT['PA Connections']*df_inputsT['Flex SOV']
+Baselines['Flex Transactions']=df_inputsT['PA Connections']*df_inputsT['Flex SOV']*df_inputsT['Cxn Conversion W/ Seasonality & Mix']
+Baselines['Gross Revenue']=df_inputsT['PA Connections']*df_inputsT['Flex SOV']*df_inputsT['Cxn Conversion W/ Seasonality & Mix']*df_inputsT['Referral Fee']
+Baselines['Accrual']=df_inputsT['PA Connections']*df_inputsT['Flex SOV']*df_inputsT['Cxn Conversion W/ Seasonality & Mix']*df_inputsT['Referral Fee']*(1-df_inputsT['Collection'])
+
+#Calculate the dynamic output table
 dfT=df.T
 output=pd.DataFrame()
 output['Flex Connections']=dfT['PA Connections']*dfT['Flex SOV']
@@ -46,8 +54,9 @@ output['Accrual']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ S
 output=output.T
 st.dataframe(output)
 st.button("Push Scenario to Hive")
-
+chartdf=pd.DataFrame[Baseline['Gross Revenue'],output.T['Gross Revenue']]
 st.title("Gross Revenue")
-st.line_chart(output.iloc[2,:])
 
+st.line_chart(chartdf)
+#output.iloc[2,:]
 st.title("Sensitivities")
