@@ -54,7 +54,9 @@ output['Accrual']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ S
 output=output.T
 st.dataframe(output)
 st.button("Push Scenario to Hive")
-chartdf=pd.DataFrame[Baselines['Gross Revenue'],output.T['Gross Revenue']]
+chartdf=pd.DataFrame()
+chartdf['Baseline']=Baselines['Gross Revenue']
+chartdf['Scenario']=output.T['Gross Revenue']
 st.title("Gross Revenue")
 
 st.line_chart(chartdf)
