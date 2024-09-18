@@ -24,10 +24,10 @@ df_inputs.set_index('Input Metric', inplace=True)
 #st.data_editor(df_inputs)
 df=st.data_editor(df_inputs)
 if st.checkbox("Show Equations"):
-    st.write("Flex Connections = PA Connections X Flex SOV")
-    st.write("Flex Transactions = PA Connections X Flex SOV X Cxn Conversion")
-    st.write("Gross Revenue = PA Connections X Flex SOV X Cxn Conversion X Referral Fee")
-    st.write("Accrual = Gross Revenue X (1 - Collection)")
+    st.write("**Flex Connections** = **PA Connections X **Flex SOV**")
+    st.write("**Flex Transactions** = **PA Connections** X **Flex SOV** X **Cxn Conversion**")
+    st.write("**Gross Revenue** = **PA Connections** X **Flex SOV** X **Cxn Conversion** X **Referral Fee**")
+    st.write("**Accrual** = **Gross Revenue** X (1 - **Collection**)")
 else:
     st.write("")
 st.info(
