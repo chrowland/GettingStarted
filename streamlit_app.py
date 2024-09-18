@@ -5,6 +5,7 @@ import pandas as pd
 st.set_page_config(
     page_title="RAPTOR - PA",
     page_icon=":eagle:",  # This is an emoji shortcode. Could be a URL too.
+    layout="wide"
 )
 st.title("PA RAPTOR")
 st.write("""
