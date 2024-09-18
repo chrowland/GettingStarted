@@ -23,10 +23,14 @@ df_inputs = pd.read_csv("PARA_ex_inputs.csv")
 df_inputs.set_index('Input Metric', inplace=True)
 #st.data_editor(df_inputs)
 df=st.data_editor(df_inputs)
-st.button(
-    "Commit Changes",
-)
-
+if st.button("Show Equations"):
+    st.write("""
+    Flex Connections = PA Connections X Flex SOV
+    Flex Transactions = PA Connections X Flex SOV X Cxn Conversion
+    Gross Revenue = PA Connections X Flex SOV X Cxn Conversion X Referral Fee
+    Accrual = Gross Revenue X (1 - Collection)
+    """
+            )
 st.info(
     """
     Outputs table. Displays calculations from the last PA Raptor run using inputs table above. Validate.
