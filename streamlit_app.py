@@ -59,6 +59,6 @@ chartdf['Baseline']=Baselines['Gross Revenue']
 chartdf['Scenario']=output.T['Gross Revenue']
 st.title("Gross Revenue")
 
-st.line_chart(chartdf)
+st.bar_chart(chartdf)
 #output.iloc[2,:]
 st.title("Sensitivities")
