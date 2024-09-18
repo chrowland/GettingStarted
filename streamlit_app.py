@@ -24,13 +24,11 @@ df_inputs.set_index('Input Metric', inplace=True)
 #st.data_editor(df_inputs)
 df=st.data_editor(df_inputs)
 if st.button("Show Equations"):
-    st.write("""
-    Flex Connections = PA Connections X Flex SOV,
-    Flex Transactions = PA Connections X Flex SOV X Cxn Conversion,
-    Gross Revenue = PA Connections X Flex SOV X Cxn Conversion X Referral Fee,
-    Accrual = Gross Revenue X (1 - Collection)
-    """
-            )
+    st.write("Flex Connections = PA Connections X Flex SOV")
+    st.write("Flex Transactions = PA Connections X Flex SOV X Cxn Conversion")
+    st.write("Gross Revenue = PA Connections X Flex SOV X Cxn Conversion X Referral Fee")
+    st.write("Accrual = Gross Revenue X (1 - Collection)")
+
 st.info(
     """
     Outputs table. Displays calculations from the last PA Raptor run using inputs table above. Validate.
