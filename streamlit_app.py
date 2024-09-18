@@ -25,9 +25,9 @@ df_inputs.set_index('Input Metric', inplace=True)
 df=st.data_editor(df_inputs)
 if st.button("Show Equations"):
     st.write("""
-    Flex Connections = PA Connections X Flex SOV
-    Flex Transactions = PA Connections X Flex SOV X Cxn Conversion
-    Gross Revenue = PA Connections X Flex SOV X Cxn Conversion X Referral Fee
+    Flex Connections = PA Connections X Flex SOV,
+    Flex Transactions = PA Connections X Flex SOV X Cxn Conversion,
+    Gross Revenue = PA Connections X Flex SOV X Cxn Conversion X Referral Fee,
     Accrual = Gross Revenue X (1 - Collection)
     """
             )
