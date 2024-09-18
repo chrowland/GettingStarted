@@ -45,5 +45,5 @@ st.dataframe(output)
 st.button("Push Scenario to Hive")
 
 st.title("Gross Revenue")
-#st.line_chart(output.iloc[2,:])
-st.line_chart(y=output.iloc[2,:],x=output.columns)
+st.line_chart(output.iloc[2,:])
+
