@@ -20,7 +20,7 @@ st.info(
 
 df_inputs = pd.read_csv("PARA_ex_inputs.csv")
 df_inputs.set_index('Input Metric', inplace=True)
-st.data_editor(df_inputs)
+#st.data_editor(df_inputs)
 df=st.data_editor(df_inputs)
 st.button(
     "Commit Changes",
