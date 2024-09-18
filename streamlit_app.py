@@ -29,7 +29,7 @@ if st.button("Show Equations"):
     st.write("Gross Revenue = PA Connections X Flex SOV X Cxn Conversion X Referral Fee")
     st.write("Accrual = Gross Revenue X (1 - Collection)")
 else:
-    
+    st.write("")
 st.info(
     """
     Outputs table. Displays calculations from the last PA Raptor run using inputs table above. Validate.
