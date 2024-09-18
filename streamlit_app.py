@@ -23,11 +23,7 @@ df.set_index('Input Metric', inplace=True)
 st.data_editor(df)
 st.button(
     "Commit Changes",
-    type="primary",
-    disabled=not has_uncommitted_changes,
-    #Update data in database
-    on_click=update_data,
-    #args=(conn,df,st.session_state.inventory_table),
+    type="primary"
 )
 st.info(
     """
