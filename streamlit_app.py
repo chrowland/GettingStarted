@@ -42,6 +42,6 @@ output=output.T
 st.dataframe(output)
 st.button("Push Scenario to Hive")
 
-st.title("Monthly Connections")
-st.line_chart(df.iloc[0,:])
+st.title("Gross Revenue")
+st.line_chart(output.iloc[2,:])
 
