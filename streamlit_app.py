@@ -20,8 +20,15 @@ st.info(
 
 df = pd.read_csv("PARA_ex_inputs.csv")
 df.set_index('Input Metric', inplace=True)
-st.dataframe(df)
-st.button("Commit Changes")
+st.data_editor(df)
+st.button(
+    "Commit Changes",
+    type="primary",
+    disabled=not has_uncommitted_changes,
+    #Update data in database
+    on_click=update_data,
+    #args=(conn,df,st.session_state.inventory_table),
+)
 st.info(
     """
     Outputs table. Displays calculations from the last PA Raptor run using inputs table above. Validate.
@@ -42,4 +49,3 @@ st.button("Push Scenario to Hive")
 st.title("Monthly Connections")
 st.line_chart(df.iloc[0,:])
 
-st.data_editor(df)
