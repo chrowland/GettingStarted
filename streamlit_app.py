@@ -53,7 +53,8 @@ output['Gross Revenue']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversio
 output['Accrual']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ Seasonality & Mix']*dfT['Referral Fee']*(1-dfT['Collection'])
 output=output.T
 st.dataframe(output)
-st.button("Push Scenario to Hive")
+Final_Frame=df.T.join(output.T,how='left')
+st.download_button("Push Scenario to Hive",Final_Frame.to_csv(),"Validation_Studio_df.csv",use_container_width=True)
 chartdf=pd.DataFrame()
 chartdf['Baseline']=Baselines['Gross Revenue']
 chartdf['Scenario']=output.T['Gross Revenue']
