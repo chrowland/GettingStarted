@@ -23,8 +23,8 @@ df.set_index('Input Metric', inplace=True)
 st.data_editor(df)
 st.button(
     "Commit Changes",
-    type="primary"
 )
+
 st.info(
     """
     Outputs table. Displays calculations from the last PA Raptor run using inputs table above. Validate.
