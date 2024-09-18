@@ -54,7 +54,7 @@ output['Accrual']=dfT['PA Connections']*dfT['Flex SOV']*dfT['Cxn Conversion W/ S
 output=output.T
 st.dataframe(output)
 Final_Frame=df.T.join(output.T,how='left')
-st.download_button("Push Scenario to Hive",Final_Frame.to_csv(),"Validation_Studio_df.csv",use_container_width=True)
+st.download_button("Push Scenario to Hive",Final_Frame.T.to_csv(),"Validation_Studio_df.csv",use_container_width=True)
 chartdf=pd.DataFrame()
 chartdf['Baseline']=Baselines['Gross Revenue']
 chartdf['Scenario']=output.T['Gross Revenue']
