@@ -67,7 +67,7 @@ st.title("Sensitivities")
 st.title("Risks and Opportunities")
 RO_df = pd.DataFrame(
     {
-        "R&O": ["st.selectbox", "st.number_input", "st.text_area", "st.button"],
+        "R&O": ["Enhanced Market Expansion", "Marketing Spend Ramp UP", "FUB Bundle", "Spam Remediation"],
         "Include?": [True, False, False, True],
     }
 )
