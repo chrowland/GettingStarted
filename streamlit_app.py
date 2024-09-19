@@ -71,7 +71,7 @@ chart=alt.Chart(sensitivities).mark_bar().encode(
     x='Impact:Q',
     y='Metric:O'
 )
-st.altair_chart(chart,stack=False)
+st.altair_chart(chart)
 
 st.dataframe(sensitivities.sort_values('Impact',ascending=False))
 st.title("Risks and Opportunities")
