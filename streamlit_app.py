@@ -62,10 +62,9 @@ chartdf['Scenario']=output.T['Gross Revenue']
 st.title("Gross Revenue")
 
 st.bar_chart(chartdf,stack=False)
-#output.iloc[2,:]
 st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
-#sensitivities.set_index('Metric', inplace=True)
+
 
 st.info(
     """
@@ -104,3 +103,12 @@ st.data_editor(
     disabled=["R&O"],
     hide_index=True,
 )
+
+chart2 = alt.Chart(chartdf).mark_bar().encode(
+            column=alt.Column('variable',sort=None),
+            x=alt.X('Input Metric',sort=None),
+            y=alt.Y('Baseline','Scenario'),
+            color='room'
+         
+        ).resolve_scale(x='independent')
+st.altair_chart(chart2)
