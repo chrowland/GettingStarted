@@ -69,7 +69,7 @@ sensitivities.set_index('Metric', inplace=True)
 
 chart=alt.Chart(sensitivities).mark_bar().encode(
     x='Impact:Q',
-    y='Metric:O'
+    y='Metric'
 )
 st.altair_chart(chart)
 
