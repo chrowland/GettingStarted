@@ -104,7 +104,7 @@ st.data_editor(
     disabled=["R&O"],
     hide_index=True,
 )
-chart2=alt.chart(chartdf.reset_index()).mark_bar().encode(
+chart2=alt.Chart(chartdf.reset_index()).mark_bar().encode(
   x='index',
   y='Baseline'
 )
