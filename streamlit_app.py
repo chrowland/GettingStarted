@@ -67,6 +67,14 @@ st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
 #sensitivities.set_index('Metric', inplace=True)
 
+st.info(
+    """
+   The values shown in the X axis of the table below express the sensitivity of the output variable (in this case Gross Revenue) to a 1% change in the input variable on the y axis.
+   That is, each input variable is multiplied by 1.01 (a 1% increase) and the percentage change in Gross Revenue is calculated and shown in the chart.
+   The greater the variable's bar in the chart below, the greater the impact it has on Gross Revenue
+    """
+)
+
 chart=alt.Chart(sensitivities.sort_values('Impact',ascending=False)).mark_bar().encode(
     x='Impact:Q',
     y='Metric:N',
