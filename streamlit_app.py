@@ -67,14 +67,14 @@ st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
 #sensitivities.set_index('Metric', inplace=True)
 
-chart=alt.Chart(sensitivities).mark_bar().encode(
+chart=alt.Chart(sensitivities.sort_values('Impact',ascending=False)).mark_bar().encode(
     x='Impact:Q',
     y='Metric:N',
     color='Metric:N'
 )
 st.altair_chart(chart)
 
-st.dataframe(sensitivities.sort_values('Impact',ascending=False))
+#st.dataframe(sensitivities.sort_values('Impact',ascending=False))
 st.title("Risks and Opportunities")
 RO_df = pd.DataFrame(
     {
