@@ -62,9 +62,10 @@ chartdf['Scenario']=output.T['Gross Revenue']
 st.title("Gross Revenue")
 
 st.bar_chart(chartdf,stack=False)
+st.write(chartdf.T)
 st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
-st.write(chartdf.T)
+
 
 st.info(
     """
@@ -103,5 +104,7 @@ st.data_editor(
     disabled=["R&O"],
     hide_index=True,
 )
-
-st.write(chartdf)
+Chart(chartdf.reset_index()).mark_bar().encode(
+  x='index',
+  y='Baseline'
+)
