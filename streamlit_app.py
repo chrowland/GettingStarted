@@ -64,7 +64,7 @@ st.title("Gross Revenue")
 st.bar_chart(chartdf,stack=False)
 #output.iloc[2,:]
 st.title("Sensitivities")
-sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.03,.02,.01]}]
+sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.03,.02,.01]})
 st.dataframe(sensitivities)
 st.title("Risks and Opportunities")
 RO_df = pd.DataFrame(
