@@ -84,6 +84,7 @@ st.altair_chart(chart)
 
 #st.dataframe(sensitivities.sort_values('Impact',ascending=False))
 st.title("Risks and Opportunities")
+st.write("Risks and Opportunities identified for this quarter are listed below. Check or uncheck specific R&Os to include or exclude them from your scenario. The R&Os that were included in the PA Raptor base case are selected by default")
 RO_df = pd.DataFrame(
     {
         "R&O": ["Enhanced Market Expansion", "Marketing Spend Ramp UP", "FUB Bundle", "Spam Remediation"],
