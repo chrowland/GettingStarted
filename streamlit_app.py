@@ -65,14 +65,13 @@ st.bar_chart(chartdf,stack=False)
 #output.iloc[2,:]
 st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
-sense=sensitivities
 sensitivities.set_index('Metric', inplace=True)
 
-chart=alt.Chart(sense).mark_bar().encode(
+chart=alt.Chart(sensitivities).mark_bar().encode(
     x='Impact:Q',
     y='Metric:N'
 )
-st.altair_chart(chart)
+st.altair_chart(chart,stack=False)
 
 st.dataframe(sensitivities.sort_values('Impact',ascending=False))
 st.title("Risks and Opportunities")
