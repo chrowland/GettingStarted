@@ -104,10 +104,4 @@ st.data_editor(
     hide_index=True,
 )
 
-chart2 = alt.Chart(chartdf).mark_bar().encode(
-            column=alt.Column('variable',sort=None),
-            x=alt.X('Input Metric',sort=None),
-            y=alt.Y('Baseline','Scenario')
-         
-        ).resolve_scale(x='independent')
-st.altair_chart(chart2)
+st.write(chartdf)
