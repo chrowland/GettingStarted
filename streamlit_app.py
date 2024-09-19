@@ -25,7 +25,7 @@ df_inputs.set_index('Input Metric', inplace=True)
 #st.data_editor(df_inputs)
 df=st.data_editor(df_inputs)
 if st.checkbox("Show Equations"):
-    st.write("**Flex Connections** = **PA Connections X **Flex SOV**")
+    st.write("**Flex Connections** = **PA Connections** X **Flex SOV**")
     st.write("**Flex Transactions** = **PA Connections** X **Flex SOV** X **Cxn Conversion**")
     st.write("**Gross Revenue** = **PA Connections** X **Flex SOV** X **Cxn Conversion** X **Referral Fee**")
     st.write("**Accrual** = **Gross Revenue** X (1 - **Collection**)")
@@ -66,12 +66,13 @@ st.bar_chart(chartdf,stack=False)
 st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
 sensitivities.set_index('Metric', inplace=True)
-st.dataframe(sensitivities.sort_values)
+
+st.dataframe(sensitivities.sort_values('Impact'))
 st.title("Risks and Opportunities")
 RO_df = pd.DataFrame(
     {
         "R&O": ["Enhanced Market Expansion", "Marketing Spend Ramp UP", "FUB Bundle", "Spam Remediation"],
-        "Include?": [True, False, False, True],
+        "Include?": [False, True, False, True],
     }
 )
 
