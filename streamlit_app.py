@@ -67,7 +67,7 @@ st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
 sensitivities.set_index('Metric', inplace=True)
 
-st.dataframe(sensitivities.sort_values('Impact'))
+st.dataframe(sensitivities.sort_values('Impact',ascending=False))
 st.title("Risks and Opportunities")
 RO_df = pd.DataFrame(
     {
