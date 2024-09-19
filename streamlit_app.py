@@ -65,7 +65,7 @@ st.bar_chart(chartdf,stack=False)
 st.title("Sensitivities")
 
 st.title("Risks and Opportunities")
-data_df = pd.DataFrame(
+RO_df = pd.DataFrame(
     {
         "R&O": ["st.selectbox", "st.number_input", "st.text_area", "st.button"],
         "Include?": [True, False, False, True],
