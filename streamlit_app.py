@@ -63,3 +63,24 @@ st.title("Gross Revenue")
 st.bar_chart(chartdf,stack=False)
 #output.iloc[2,:]
 st.title("Sensitivities")
+
+st.title("Risks and Opportunities")
+data_df = pd.DataFrame(
+    {
+        "R&O": ["st.selectbox", "st.number_input", "st.text_area", "st.button"],
+        "Include?": [True, False, False, True],
+    }
+)
+
+st.data_editor(
+    RO_df,
+    column_config={
+        "favorite": st.column_config.CheckboxColumn(
+            "Include?",
+            help="Select R&Os to include in forecast",
+            default=False,
+        )
+    },
+    disabled=["R&O"],
+    hide_index=True,
+)
