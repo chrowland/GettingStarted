@@ -65,7 +65,7 @@ st.bar_chart(chartdf,stack=False)
 #output.iloc[2,:]
 st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
-sensitivities.set_index('Metric', inplace=True)
+#sensitivities.set_index('Metric', inplace=True)
 
 chart=alt.Chart(sensitivities).mark_bar().encode(
     x='Impact:Q',
