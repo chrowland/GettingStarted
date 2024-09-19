@@ -68,8 +68,8 @@ sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 
 sensitivities.set_index('Metric', inplace=True)
 
 chart=alt.Chart(sensitivities).mark_bar().encode(
-    x='Impact',
-    y='Metric'
+    x='Impact:Q',
+    y='Metric:O'
 )
 st.altair_chart(chart)
 
