@@ -64,7 +64,7 @@ st.title("Gross Revenue")
 st.bar_chart(chartdf,stack=False)
 st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
-
+st.write(chartdf.T)
 
 st.info(
     """
