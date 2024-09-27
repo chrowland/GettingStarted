@@ -57,7 +57,7 @@ st.dataframe(output)
 Final_Frame=df.T.join(output.T,how='left')
 
 scenario_form =st.form('scenario_name')
-scenario_name=scenario_form.text_input('Name your Scenario:')
+scenario_name=scenario_form.text_input('Name your Scenario:', 'Danny\'s super cool scenario')
 submit=scenario_form.form_submit_button('Done')
 
 st.download_button("Push Scenario to Hive",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
