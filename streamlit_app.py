@@ -60,7 +60,8 @@ scenario_form =st.form('scenario_name')
 scenario_name=scenario_form.text_input('Name your Scenario:')
 submit=scenario_form.form_submit_button('Done')
 
-st.download_button("Push Scenario to Hive",Final_Frame.T.to_csv(),"Validation_Studio_df.csv",use_container_width=True)
+st.download_button("Push Scenario to Hive",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
+#Validation_Studio_df.csv
 chartdf=pd.DataFrame()
 chartdf['Baseline']=Baselines['Gross Revenue']
 chartdf['Scenario']=output.T['Gross Revenue']
