@@ -58,6 +58,7 @@ Final_Frame=df.T.join(output.T,how='left')
 
 scenario_form =st.form('scenario_name')
 scenario_name=scenario_form.text_input('Name your Scenario:')
+submit=scenario_form.form_submit_button('Done')
 
 st.download_button("Push Scenario to Hive",Final_Frame.T.to_csv(),"Validation_Studio_df.csv",use_container_width=True)
 chartdf=pd.DataFrame()
