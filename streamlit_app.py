@@ -119,8 +119,3 @@ st.data_editor(
     hide_index=True,
 )
 
-chart2=alt.Chart(chartdf.reset_index()).mark_bar().encode(
-  x=alt.X('index',sort=None),
-  y='Baseline','Scenario'
-)
-st.altair_chart(chart2)
