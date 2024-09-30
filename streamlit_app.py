@@ -59,11 +59,7 @@ Final_Frame=df.T.join(output.T,how='left')
 #scenario_form =st.form('scenario_name')
 #scenario_name=scenario_form.text_input('Name your Scenario:', 'Danny\'s super cool scenario')
 #submit=scenario_form.form_submit_button('Done')
-with st.form("scenario_name"):
-    scenario_name=st.text_input('Name your Scenario:','Danny\'s super cool scenario')
-    st.form_submit_button('Submit')
-    #st.download_button("Download this scenario",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
-st.download_button("Push Scenario to Hive",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
+
 #Validation_Studio_df.csv
 chartdf=pd.DataFrame()
 
@@ -78,6 +74,15 @@ st.title(Target)
 
 st.bar_chart(chartdf,stack=False)
 st.write(chartdf.T)
+
+with st.form("scenario_name"):
+    scenario_name=st.text_input('Name your Scenario:','Danny\'s super cool scenario')
+    st.form_submit_button('Submit')
+    #st.download_button("Download this scenario",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
+st.download_button("Push Scenario to Hive",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
+
+
+
 st.title("Sensitivities")
 sensitivities=pd.DataFrame({'Metric':['Flex SOV', 'Referral Fee', 'Collection', 'PA Connection'],'Impact': [.04,.05,.02,.01]})
 
