@@ -22,7 +22,6 @@ st.info(
 
 df_inputs = pd.read_csv("PARA_ex_inputs.csv")
 df_inputs.set_index('Input Metric', inplace=True)
-#st.data_editor(df_inputs)
 df=st.data_editor(df_inputs)
 if st.checkbox("Show Equations"):
     st.write("Flex Connections = PA Connections X Flex SOV")
@@ -56,11 +55,6 @@ output=output.T
 st.dataframe(output)
 Final_Frame=df.T.join(output.T,how='left')
 
-#scenario_form =st.form('scenario_name')
-#scenario_name=scenario_form.text_input('Name your Scenario:', 'Danny\'s super cool scenario')
-#submit=scenario_form.form_submit_button('Done')
-
-#Validation_Studio_df.csv
 chartdf=pd.DataFrame()
 
 Target = st.selectbox(
@@ -124,8 +118,8 @@ st.data_editor(
     disabled=["R&O"],
     hide_index=True,
 )
-#chart2=alt.Chart(chartdf.reset_index()).mark_bar().encode(
-#  x=alt.X('index',sort=None),
-#  y='Baseline','Scenario'
-#)
-#st.altair_chart(chart2)
+chart2=alt.Chart(chartdf.reset_index()).mark_bar().encode(
+  x=alt.X('index',sort=None),
+  y='Baseline','Scenario'
+)
+st.altair_chart(chart2)
