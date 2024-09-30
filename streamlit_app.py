@@ -16,7 +16,6 @@ st.write("""
 st.info(
     """
     Inputs table. Displays inputs to last PA Raptor run. Validate and overwrite to see impacts of revision.
-    And don't forget to commit your changes when you're done.
     """
 )
 
