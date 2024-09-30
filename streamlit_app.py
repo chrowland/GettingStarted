@@ -72,10 +72,7 @@ st.write(chartdf.T)
 with st.form("scenario_name"):
     scenario_name=st.text_input('Name your Scenario:','Danny\'s super cool scenario')
     st.form_submit_button('Submit')
-    if(st.button('Submit')):
-        st.download_button(f"Download {scenario_name}",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
-    #st.download_button("Download this scenario",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
-#st.download_button(f"Download {scenario_name}",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
+st.download_button(f"Download {scenario_name}",Final_Frame.T.to_csv(),f"{scenario_name}.csv",use_container_width=True)
 
 
 
