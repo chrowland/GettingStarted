@@ -72,9 +72,9 @@ Target = st.selectbox(
     ("Gross Revenue", "Flex Transactions", "Flex Connections", "Accrual"),
 )
 
-chartdf['Baseline']=Baselines['Gross Revenue']
-chartdf['Scenario']=output.T['Gross Revenue']
-st.title("Gross Revenue")
+chartdf['Baseline']=Baselines[Target]
+chartdf['Scenario']=output.T[Target]
+st.title(Target)
 
 st.bar_chart(chartdf,stack=False)
 st.write(chartdf.T)
