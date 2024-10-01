@@ -64,6 +64,7 @@ Target = st.selectbox(
 
 chartdf['Baseline']=Baselines[Target]
 chartdf['Scenario']=output.T[Target]
+chartdf['Difference']=chartdf['Scenario']-chartdf['Baseline']
 st.title(Target)
 
 st.bar_chart(chartdf,stack=False)
