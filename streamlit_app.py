@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-from matplotlib import pyplot as plt
 
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
