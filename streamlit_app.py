@@ -67,7 +67,7 @@ chartdf['Scenario']=output.T[Target]
 chartdf['Difference']=chartdf['Scenario']-chartdf['Baseline']
 st.title(Target)
 
-st.bar_chart(chartdf.iloc[:,0:1],stack=False)
+st.bar_chart(chartdf.iloc[:,0:2],stack=False)
 st.write(chartdf.T)
 
 with st.form("scenario_name"):
